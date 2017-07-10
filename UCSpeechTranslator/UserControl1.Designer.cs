@@ -33,7 +33,7 @@
             // UserControl1
             // 
             this.Name = "UserControl1";
-            this.Size = new System.Drawing.Size(169, 129);
+            this.Size = new System.Drawing.Size(356, 102);
             this.ResumeLayout(false);
 
         }
