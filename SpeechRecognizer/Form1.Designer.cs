@@ -64,7 +64,7 @@
             // 
             // MainForm
             // 
-            this.ClientSize = new System.Drawing.Size(498, 298);
+            this.ClientSize = new System.Drawing.Size(498, 157);
             this.Controls.Add(this.bOpenFile1);
             this.Controls.Add(this.userControl11);
             this.Name = "MainForm";

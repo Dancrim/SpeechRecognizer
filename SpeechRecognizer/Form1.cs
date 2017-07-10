@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using SpeechRecognizer;
+using UCSpeechTranslator;
 namespace SpeechRecognizer
 {
     public partial class MainForm : Form
     {
+        AudioSource.AudioSource audio = new AudioSource.AudioSource();
+
         public MainForm()
         {
             InitializeComponent();
@@ -23,10 +25,11 @@ namespace SpeechRecognizer
             openFileDialog1.Filter = "mp3 files (*.mp3)|*.mp3|wav files (*.wav)|*.wav|All files (*.*)|*.*";
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                AudioSource.AudioSource audio = new AudioSource.AudioSource();
-                audio.AudioAdress = openFileDialog1.FileName.Remove(openFileDialog1.FileName.IndexOf(openFileDialog1.SafeFileName)) + openFileDialog1.FileName;
-                //userControl11.Controls.
                 
+                audio.AudioAdress =  openFileDialog1.FileName;
+                //userControl11.Controls.
+                UserControl1 uc = new UserControl1();
+                uc.qwerg(audio.AudioAdress);
             }
         }
     }
