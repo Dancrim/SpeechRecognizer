@@ -16,5 +16,6 @@ namespace UCSpeechTranslator
         {
             InitializeComponent();
         }
+
     }
 }

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using AudioTranslator.AudioSource;
+using SpeechRecognizer.AudioSource;
 
-namespace AudioTranslator.YandexWrapper
+namespace SpeechRecognizer.YandexWrapper
 {
     class YandexWrapper
     {
