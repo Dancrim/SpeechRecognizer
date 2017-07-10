@@ -69,6 +69,7 @@
             this.PlayButton.TabIndex = 3;
             this.PlayButton.Text = "Play";
             this.PlayButton.UseVisualStyleBackColor = true;
+            this.PlayButton.Click += new System.EventHandler(this.PlayButton_Click);
             // 
             // StopButton
             // 
@@ -78,6 +79,7 @@
             this.StopButton.TabIndex = 4;
             this.StopButton.Text = "Stop";
             this.StopButton.UseVisualStyleBackColor = true;
+            this.StopButton.Click += new System.EventHandler(this.StopButton_Click);
             // 
             // UserControl1
             // 
