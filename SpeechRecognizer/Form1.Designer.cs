@@ -28,22 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ucSpeechTranslator1 = new UCSpeechTranslator.UCSpeechTranslator();
+            this.userControl11 = new UCSpeechTranslator.UserControl1();
             this.SuspendLayout();
             // 
-            // ucSpeechTranslator1
+            // userControl11
             // 
-            this.ucSpeechTranslator1.Location = new System.Drawing.Point(64, 52);
-            this.ucSpeechTranslator1.Name = "ucSpeechTranslator1";
-            this.ucSpeechTranslator1.Size = new System.Drawing.Size(142, 90);
-            this.ucSpeechTranslator1.TabIndex = 0;
+            this.userControl11.Location = new System.Drawing.Point(78, 60);
+            this.userControl11.Name = "userControl11";
+            this.userControl11.Size = new System.Drawing.Size(142, 90);
+            this.userControl11.TabIndex = 0;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Controls.Add(this.ucSpeechTranslator1);
+            this.Controls.Add(this.userControl11);
             this.Name = "MainForm";
             this.Text = "SpeechRecognizer";
             this.ResumeLayout(false);
@@ -52,7 +52,7 @@
 
         #endregion
 
-        private UCSpeechTranslator.UCSpeechTranslator ucSpeechTranslator1;
+        private UCSpeechTranslator.UserControl1 userControl11;
     }
 }
 

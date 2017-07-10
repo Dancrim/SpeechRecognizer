@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace UCSpeechTranslator
 {
-    public partial class UCSpeechTranslator: UserControl
+    public partial class UserControl1: UserControl
     {
-        public UCSpeechTranslator()
+        public UserControl1()
         {
             InitializeComponent();
         }

@@ -1,6 +1,6 @@
 ﻿namespace UCSpeechTranslator
 {
-    partial class UCSpeechTranslator
+    partial class UserControl1
     {
         /// <summary>
         /// Требуется переменная конструктора.
@@ -50,13 +50,13 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "label1";
             // 
-            // UCSpeechTranslator
+            // UserControl1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
-            this.Name = "UCSpeechTranslator";
+            this.Name = "UserControl1";
             this.Size = new System.Drawing.Size(142, 90);
             this.ResumeLayout(false);
             this.PerformLayout();
