@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.IO;
 using NAudio;
 using NAudio.Wave;
+using UCSpeechTranslator.YandexWrapper;
 namespace UCSpeechTranslator
 {
      
@@ -74,6 +75,16 @@ namespace UCSpeechTranslator
             //    File.WriteAllText(sfd.FileName, textBox1.Text);
 
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            System.IO.StreamReader sr = new StreamReader("in.txt");
+            //AudioSource.AudioSource audio = new AudioSource.AudioSource();
+            string qwe = sr.ReadLine();
+            textBox1.Text = UCSpeechTranslator.YandexWrapper.YandexWrapper.GetAudioText(qwe);
+            int n = 0;
+            n++;
         }
     }
 }

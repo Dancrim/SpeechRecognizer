@@ -9,7 +9,7 @@ using System.Net;
 
 namespace SpeechRecognizer.YandexWrapper
 {
-    class YandexWrapper
+    public class YandexWrapper
     {
         public string AudioText;
         public static string PostMethod(byte[] bytes)
