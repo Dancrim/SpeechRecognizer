@@ -14,7 +14,8 @@ namespace UCSpeechTranslator.YandexWrapper
         public static string AudioText;
         public static string PostMethod(byte[] bytes)
         {
-            string postUrl = "https://asr.yandex.net/asr_xml?" + "uuid=2606A62EE2C5F840849C7F360FE3E67B&" + "key=f040e6ac-3218-410c-af54-8a495f31ce79&" + "topic=queries";
+            string postUrl = "https://asr.yandex.net/asr_xml?" + Guid.NewGuid() + "&" + "key=f040e6ac-3218-410c-af54-8a495f31ce79&" + "topic=queries";
+            //"uuid=2606A62EE2C5F840849C7F360FE3E67B&"
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(postUrl);
             request.Method = "POST";
             request.Host = "asr.yandex.net";
