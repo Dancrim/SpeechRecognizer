@@ -25,11 +25,12 @@ namespace SpeechRecognizer
             openFileDialog1.Filter = "mp3 files (*.mp3)|*.mp3|wav files (*.wav)|*.wav|All files (*.*)|*.*";
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                
                 audio.AudioAdress =  openFileDialog1.FileName;
-                //userControl11.Controls.
                 UserControl1 uc = new UserControl1();
-                uc.qwerg(audio.AudioAdress);
+                uc.SetWay(audio.AudioAdress);
+                var sw = new System.IO.StreamWriter("in.txt");
+                sw.WriteLine(audio.AudioAdress);
+                sw.Close();
             }
         }
     }

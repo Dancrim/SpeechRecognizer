@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
-namespace SpeechRecognizer.AudioSource
+namespace UCSpeechTranslator.AudioSource
 {
     public class AudioSource
     {

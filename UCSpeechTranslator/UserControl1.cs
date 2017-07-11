@@ -8,56 +8,83 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using NAudio;
+using NAudio.Wave;
+using UCSpeechTranslator.YandexWrapper;
 namespace UCSpeechTranslator
 {
      
     public partial class UserControl1 : UserControl
     {
-        String ahaha;
         System.Media.SoundPlayer player = new System.Media.SoundPlayer();
+        IWavePlayer waveOutDevice = new WaveOut();
+        AudioFileReader audioFileReader;
+        bool playing;
         public UserControl1()
         {
             InitializeComponent();
         }
-        bool playing;
-       
-        public void qwerg(string AudioAdress)
+
+        public void SetWay(string AudioAdress)
         {
             playing = false;
-            player.SoundLocation = AudioAdress;
-            label1.Text = player.SoundLocation;
-            ahaha = player.SoundLocation;
+            label1.Text = AudioAdress;
         }
 
         private void PlayButton_Click(object sender, EventArgs e)
         {
-            player.SoundLocation = ahaha;
             if (!playing)
             {
-            
+                System.IO.StreamReader sr = new StreamReader("in.txt");
+                string tmp = sr.ReadLine();
+                if (tmp.Substring(tmp.Length - 3, 3) == "mp3")
+                {
+                    audioFileReader = new AudioFileReader(tmp);
+                    waveOutDevice.Init(audioFileReader);
+                    waveOutDevice.Play();
+                }
+                else
+                {
+                    player.SoundLocation = sr.ReadLine();
                     player.Play();
+                }
                 playing = true;
+                sr.Close();
             }
         }
 
         private void StopButton_Click(object sender, EventArgs e)
         {
-         
             if (playing)
             {
-                player.Stop();
+                System.IO.StreamReader sr = new StreamReader("in.txt");
+                string tmp = sr.ReadLine();
+                if (tmp.Substring(tmp.Length - 3, 3) == "mp3")
+                    waveOutDevice.Stop();
+                else
+                    player.Stop();
                 playing = false;
+                sr.Close();
             }
-
         }
 
         private void UserControl1_Load(object sender, EventArgs e)
         {
-           // SaveFileDialog sfd = new SaveFileDialog();
-           // if (sfd.ShowDialog() == DialogResult.OK)
-             //   File.WriteAllText(sfd.FileName, textBox1.Text);
-            int y = 0;
+            //SaveFileDialog sfd = new SaveFileDialog();
+            //if (sfd.ShowDialog() == DialogResult.OK)
+            //    File.WriteAllText(sfd.FileName, textBox1.Text);
+
+
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            System.IO.StreamReader sr = new StreamReader("in.txt");
+            //AudioSource.AudioSource audio = new AudioSource.AudioSource();
+            string qwe = sr.ReadLine();
+            textBox1.Text = UCSpeechTranslator.YandexWrapper.YandexWrapper.GetAudioText(qwe);
+            int n = 0;
+            n++;
+        }
     }
 }
