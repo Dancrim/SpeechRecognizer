@@ -14,7 +14,7 @@ namespace UCSpeechTranslator.YandexWrapper
         public static string AudioText;
         public static string PostMethod(byte[] bytes)
         {
-            string postUrl = "https://asr.yandex.net/asr_xml?" + "uuid=" + Guid.NewGuid() + "&" + "key=f040e6ac-3218-410c-af54-8a495f31ce79&" + "topic=queries HTTP/1.1";
+            string postUrl = "https://asr.yandex.net/asr_xml?" + "uuid=2606A62EE2C5F840849C7F360FE3E67B&" + "key=f040e6ac-3218-410c-af54-8a495f31ce79&" + "topic=queries";
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(postUrl);
             request.Method = "POST";
             request.Host = "asr.yandex.net";
@@ -34,7 +34,7 @@ namespace UCSpeechTranslator.YandexWrapper
                 responseToString = strreader.ReadToEnd();
             }
             int index = responseToString.IndexOf("<variant confidence=\"1\">");
-            responseToString = responseToString.Substring(index + 24, responseToString.Length - index - 24);
+        //    responseToString = responseToString.Substring(index + 24, responseToString.Length - index - 24);
             int index2 = responseToString.IndexOf("</variant>");
             responseToString = responseToString.Substring(0, index2);
             return responseToString;
