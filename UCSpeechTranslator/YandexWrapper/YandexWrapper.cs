@@ -19,7 +19,7 @@ namespace UCSpeechTranslator.YandexWrapper
             request.Method = "POST";
             request.Host = "asr.yandex.net";
             request.SendChunked = true;
-            //request.UserAgent = "Oleg"; 
+            request.UserAgent = "Oleg"; 
             request.ContentType = "audio/x-mpeg-3";
             request.ContentLength = bytes.Length;
             using (var newStream = request.GetRequestStream())
@@ -34,7 +34,7 @@ namespace UCSpeechTranslator.YandexWrapper
                 responseToString = strreader.ReadToEnd();
             }
             int index = responseToString.IndexOf("<variant confidence=\"1\">");
-            responseToString = responseToString.Substring(index + 24, responseToString.Length - index - 24);
+        //    responseToString = responseToString.Substring(index + 24, responseToString.Length - index - 24);
             int index2 = responseToString.IndexOf("</variant>");
             responseToString = responseToString.Substring(0, index2);
             return responseToString;

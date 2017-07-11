@@ -32,6 +32,7 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.userControl11 = new UCSpeechTranslator.UserControl1();
             this.bOpenFile1 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // bOpenFile
@@ -62,9 +63,20 @@
             this.bOpenFile1.UseVisualStyleBackColor = true;
             this.bOpenFile1.Click += new System.EventHandler(this.bOpenFile_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(98, 21);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Exit";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // MainForm
             // 
             this.ClientSize = new System.Drawing.Size(498, 157);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.bOpenFile1);
             this.Controls.Add(this.userControl11);
             this.Name = "MainForm";
@@ -78,6 +90,7 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private UCSpeechTranslator.UserControl1 userControl11;
         private System.Windows.Forms.Button bOpenFile1;
+        private System.Windows.Forms.Button button1;
     }
 }
 

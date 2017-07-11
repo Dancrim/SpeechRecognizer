@@ -37,17 +37,12 @@ namespace UCSpeechTranslator
             {
                 System.IO.StreamReader sr = new StreamReader("in.txt");
                 string tmp = sr.ReadLine();
-                if (tmp.Substring(tmp.Length - 3, 3) == "mp3")
                 {
                     audioFileReader = new AudioFileReader(tmp);
                     waveOutDevice.Init(audioFileReader);
                     waveOutDevice.Play();
                 }
-                else
-                {
-                    player.SoundLocation = sr.ReadLine();
-                    player.Play();
-                }
+            
                 playing = true;
                 sr.Close();
             }
@@ -59,10 +54,7 @@ namespace UCSpeechTranslator
             {
                 System.IO.StreamReader sr = new StreamReader("in.txt");
                 string tmp = sr.ReadLine();
-                if (tmp.Substring(tmp.Length - 3, 3) == "mp3")
                     waveOutDevice.Stop();
-                else
-                    player.Stop();
                 playing = false;
                 sr.Close();
             }
