@@ -53,11 +53,11 @@ namespace UCSpeechTranslator
 
         private void UserControl1_Load(object sender, EventArgs e)
         {
-            SaveFileDialog sfd = new SaveFileDialog();
-if (sfd.ShowDialog() == DialogResult.OK)
-    File.WriteAllText(sfd.FileName, textBox1.Text);
-
-
+           // SaveFileDialog sfd = new SaveFileDialog();
+           // if (sfd.ShowDialog() == DialogResult.OK)
+             //   File.WriteAllText(sfd.FileName, textBox1.Text);
+            int y = 0;
+        }
 
     }
 }
