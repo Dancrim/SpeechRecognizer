@@ -1,7 +1,5 @@
-﻿namespace UCSpeechTranslator
-{
-    partial class UserControl1
-    {
+﻿namespace UCSpeechTranslator {
+    partial class UserControl1 {
         /// <summary>
         /// Требуется переменная конструктора.
         /// </summary>
@@ -11,10 +9,8 @@
         /// Освободить все используемые ресурсы.
         /// </summary>
         /// <param name="disposing">истинно, если управляемый ресурс должен быть удален; иначе ложно.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
+        protected override void Dispose(bool disposing) {
+            if (disposing && (components != null)) {
                 components.Dispose();
             }
             base.Dispose(disposing);
@@ -26,14 +22,12 @@
         /// Обязательный метод для поддержки конструктора - не изменяйте 
         /// содержимое данного метода при помощи редактора кода.
         /// </summary>
-        private void InitializeComponent()
-        {
+        private void InitializeComponent() {
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.PlayButton = new System.Windows.Forms.Button();
             this.StopButton = new System.Windows.Forms.Button();
-            this.bOpenFile = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.SuspendLayout();
             // 
@@ -84,21 +78,10 @@
             this.StopButton.UseVisualStyleBackColor = true;
             this.StopButton.Click += new System.EventHandler(this.StopButton_Click);
             // 
-            // bOpenFile
-            // 
-            this.bOpenFile.Location = new System.Drawing.Point(246, 69);
-            this.bOpenFile.Name = "bOpenFile";
-            this.bOpenFile.Size = new System.Drawing.Size(75, 23);
-            this.bOpenFile.TabIndex = 5;
-            this.bOpenFile.Text = "Open File";
-            this.bOpenFile.UseVisualStyleBackColor = true;
-            this.bOpenFile.Click += new System.EventHandler(this.bOpenFile_Click);
-            // 
             // UserControl1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.bOpenFile);
             this.Controls.Add(this.StopButton);
             this.Controls.Add(this.PlayButton);
             this.Controls.Add(this.textBox1);
@@ -119,7 +102,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button PlayButton;
         private System.Windows.Forms.Button StopButton;
-        private System.Windows.Forms.Button bOpenFile;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
