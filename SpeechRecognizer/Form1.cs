@@ -23,15 +23,12 @@ namespace SpeechRecognizer {
                 var sw = new System.IO.StreamWriter("adress.txt");
                 sw.WriteLine(openFileDialog1.FileName);
                 sw.Close();
-                userControl12.AudioFile = openFileDialog1.FileName;
+                UCSpeechTranslator.AudioFile = openFileDialog1.FileName;
             }
-
-            //UserControl1 dd = new UserControl1();
-            //var qwe = dd.Controls.Find("label1", true);
-
         }
 
-        private void button1_Click(object sender, EventArgs e) {
+        private void ExitButton_Click(object sender, EventArgs e)
+        {
             Application.Exit();
         }
     }

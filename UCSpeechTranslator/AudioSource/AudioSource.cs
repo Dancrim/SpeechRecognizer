@@ -5,31 +5,46 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 
-namespace UCSpeechTranslator.AudioSource {
-    public class AudioSource {
-        /*поправить поля, установить гет и сет, убрать методы*/
-        public string AudioAdress;
-        //    { get { return  }
-        //}
-        public string APIKey;
-        public string Topic;
-        public byte[] BinarySource;
-        public void SetAudioAdress(AudioSource obj) {
-            StreamReader sr = new StreamReader("adress.txt");
-            obj.AudioAdress = sr.ReadLine();
+namespace UCSpeechTranslator.AudioSource
+{
+    public class AudioSource
+    {
+        public string AudioAdress
+        {
+            get
+            {
+                StreamReader swf = new StreamReader("adress.txt");
+                string lol = swf.ReadLine();
+                swf.Close();
+                return lol;
+            }
         }
-        public void SetAPIKey(AudioSource obj) {
-            StreamReader sr = new StreamReader("apikey.txt");
-            obj.APIKey = sr.ReadLine();
+        public string APIKey
+        {
+            get
+            {
+                StreamReader swf = new StreamReader("apikey.txt");
+                string lol = swf.ReadLine();
+                swf.Close();
+                return lol;
+            }
         }
-        public void SetTopic(AudioSource obj) {
-            StreamReader sr = new StreamReader("topic.txt");
-            obj.Topic = sr.ReadLine();
+        public string Topic
+        {
+            get
+            {
+                StreamReader swf = new StreamReader("topic.txt");
+                string lol = swf.ReadLine();
+                swf.Close();
+                return lol;
+            }
         }
-        public void SetBinarySource(AudioSource obj) {
-            //  StreamReader sr = new StreamReader(obj.AudioAdress);
-            //  obj.BinarySource = Encoding.ASCII.GetBytes(sr.ReadToEnd());
-            obj.BinarySource = File.ReadAllBytes(obj.AudioAdress);
+        public byte[] BinarySource
+        {
+            get
+            {
+                return File.ReadAllBytes(AudioAdress);
+            }
         }
     }
 }
