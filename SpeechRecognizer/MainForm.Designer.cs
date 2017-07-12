@@ -32,6 +32,7 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.bOpenFile1 = new System.Windows.Forms.Button();
             this.ExitButton = new System.Windows.Forms.Button();
+            this.ucSpeechRecognizer = new UCSpeechTranslator.UCSpeechRecognizer();
             this.SuspendLayout();
             // 
             // bOpenFile
@@ -61,12 +62,22 @@
             this.ExitButton.UseVisualStyleBackColor = true;
             this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
+            // ucSpeechRecognizer
+            // 
+            this.ucSpeechRecognizer.AudioFile = "Путь: ";
+            this.ucSpeechRecognizer.Location = new System.Drawing.Point(12, 50);
+            this.ucSpeechRecognizer.Name = "ucSpeechRecognizer";
+            this.ucSpeechRecognizer.Size = new System.Drawing.Size(565, 259);
+            this.ucSpeechRecognizer.TabIndex = 3;
+            // 
             // MainForm
             // 
             this.ClientSize = new System.Drawing.Size(607, 345);
+            this.Controls.Add(this.ucSpeechRecognizer);
             this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.bOpenFile1);
             this.Name = "MainForm";
+            this.Text = "SpeechRecognizer";
             this.ResumeLayout(false);
 
         }
@@ -78,6 +89,7 @@
         private UCSpeechTranslator.UCSpeechRecognizer UCSpeechTranslator;
         private System.Windows.Forms.Button bOpenFile1;
         private System.Windows.Forms.Button ExitButton;
+        private UCSpeechTranslator.UCSpeechRecognizer ucSpeechRecognizer;
     }
 }
 

@@ -45,23 +45,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AudioSource\AudioSource.cs" />
-    <Compile Include="UserControl1.cs">
+    <Compile Include="ucSpeechRecognizer.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControl1.Designer.cs">
-      <DependentUpon>UserControl1.cs</DependentUpon>
+    <Compile Include="ucSpeechRecognizer.Designer.cs">
+      <DependentUpon>ucSpeechRecognizer.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="YandexWrapper\YandexWrapper.cs" />
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="UserControl1.resx">
-      <DependentUpon>UserControl1.cs</DependentUpon>
+    <EmbeddedResource Include="ucSpeechRecognizer.resx">
+      <DependentUpon>ucSpeechRecognizer.cs</DependentUpon>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="way.txt" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

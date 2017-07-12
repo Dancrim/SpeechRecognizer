@@ -10,7 +10,6 @@ using System.Windows.Forms;
 using UCSpeechTranslator;
 namespace SpeechRecognizer {
     public partial class MainForm : Form {
-        AudioSource.AudioSource audio = new AudioSource.AudioSource();
 
         public MainForm() {
             InitializeComponent();
@@ -23,7 +22,7 @@ namespace SpeechRecognizer {
                 var sw = new System.IO.StreamWriter("adress.txt");
                 sw.WriteLine(openFileDialog1.FileName);
                 sw.Close();
-                UCSpeechTranslator.AudioFile = openFileDialog1.FileName;
+                ucSpeechRecognizer.AudioFile = openFileDialog1.FileName;
             }
         }
 
