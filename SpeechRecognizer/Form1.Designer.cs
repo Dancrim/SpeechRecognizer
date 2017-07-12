@@ -30,9 +30,9 @@
         {
             this.bOpenFile = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.userControl11 = new UCSpeechTranslator.UserControl1();
             this.bOpenFile1 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.userControl12 = new UCSpeechTranslator.UserControl1();
             this.SuspendLayout();
             // 
             // bOpenFile
@@ -45,13 +45,6 @@
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // userControl11
-            // 
-            this.userControl11.Location = new System.Drawing.Point(12, 48);
-            this.userControl11.Name = "userControl11";
-            this.userControl11.Size = new System.Drawing.Size(442, 104);
-            this.userControl11.TabIndex = 0;
             // 
             // bOpenFile1
             // 
@@ -73,12 +66,19 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // userControl12
+            // 
+            this.userControl12.Location = new System.Drawing.Point(12, 49);
+            this.userControl12.Name = "userControl12";
+            this.userControl12.Size = new System.Drawing.Size(437, 96);
+            this.userControl12.TabIndex = 3;
+            // 
             // MainForm
             // 
             this.ClientSize = new System.Drawing.Size(498, 157);
+            this.Controls.Add(this.userControl12);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.bOpenFile1);
-            this.Controls.Add(this.userControl11);
             this.Name = "MainForm";
             this.ResumeLayout(false);
 
@@ -91,6 +91,7 @@
         private UCSpeechTranslator.UserControl1 userControl11;
         private System.Windows.Forms.Button bOpenFile1;
         private System.Windows.Forms.Button button1;
+        private UCSpeechTranslator.UserControl1 userControl12;
     }
 }
 

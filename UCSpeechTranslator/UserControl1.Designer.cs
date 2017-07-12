@@ -1,7 +1,5 @@
-﻿namespace UCSpeechTranslator
-{
-    partial class UserControl1
-    {
+﻿namespace UCSpeechTranslator {
+    partial class UserControl1 {
         /// <summary>
         /// Требуется переменная конструктора.
         /// </summary>
@@ -11,10 +9,8 @@
         /// Освободить все используемые ресурсы.
         /// </summary>
         /// <param name="disposing">истинно, если управляемый ресурс должен быть удален; иначе ложно.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
+        protected override void Dispose(bool disposing) {
+            if (disposing && (components != null)) {
                 components.Dispose();
             }
             base.Dispose(disposing);
@@ -26,18 +22,18 @@
         /// Обязательный метод для поддержки конструктора - не изменяйте 
         /// содержимое данного метода при помощи редактора кода.
         /// </summary>
-        private void InitializeComponent()
-        {
+        private void InitializeComponent() {
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.PlayButton = new System.Windows.Forms.Button();
             this.StopButton = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(360, 0);
+            this.button1.Location = new System.Drawing.Point(165, 69);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 0;
@@ -59,7 +55,7 @@
             this.textBox1.Location = new System.Drawing.Point(3, 27);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(432, 39);
+            this.textBox1.Size = new System.Drawing.Size(457, 39);
             this.textBox1.TabIndex = 2;
             // 
             // PlayButton
@@ -92,7 +88,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Name = "UserControl1";
-            this.Size = new System.Drawing.Size(437, 96);
+            this.Size = new System.Drawing.Size(460, 96);
             this.Load += new System.EventHandler(this.UserControl1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -106,5 +102,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button PlayButton;
         private System.Windows.Forms.Button StopButton;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
