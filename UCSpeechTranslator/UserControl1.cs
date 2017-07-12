@@ -19,64 +19,54 @@ namespace UCSpeechTranslator
         System.Media.SoundPlayer player = new System.Media.SoundPlayer();
         IWavePlayer waveOutDevice = new WaveOut();
         AudioFileReader audioFileReader;
-        bool playing;
         public UserControl1()
         {
             InitializeComponent();
         }
 
-        public void SetWay(string AudioAdress)
-        {
-            playing = false;
-            label1.Text = AudioAdress;
-        }
-
         private void PlayButton_Click(object sender, EventArgs e)
         {
-            if (!playing)
-            {
-                System.IO.StreamReader sr = new StreamReader("in.txt");
-                string tmp = sr.ReadLine();
-                {
-                    audioFileReader = new AudioFileReader(tmp);
-                    waveOutDevice.Init(audioFileReader);
-                    waveOutDevice.Play();
-                }
-            
-                playing = true;
-                sr.Close();
-            }
+                var obj = new AudioSource.AudioSource();
+                obj.SetAudioAdress(obj);
+                //System.IO.StreamReader sr = new StreamReader("in.txt");
+                //string tmp = sr.ReadLine();
+                audioFileReader = new AudioFileReader(obj.AudioAdress);
+                waveOutDevice.Init(audioFileReader);
+                waveOutDevice.Play();
+                //sr.Close();
         }
 
         private void StopButton_Click(object sender, EventArgs e)
         {
-            if (playing)
-            {
-                System.IO.StreamReader sr = new StreamReader("in.txt");
-                string tmp = sr.ReadLine();
-                    waveOutDevice.Stop();
-                playing = false;
-                sr.Close();
-            }
+                //System.IO.StreamReader sr = new StreamReader("in.txt");
+                //string tmp = sr.ReadLine();
+                waveOutDevice.Stop();
+                //sr.Close();
         }
 
         private void UserControl1_Load(object sender, EventArgs e)
         {
-            //SaveFileDialog sfd = new SaveFileDialog();
-            //if (sfd.ShowDialog() == DialogResult.OK)
-            //    File.WriteAllText(sfd.FileName, textBox1.Text);
-
 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            System.IO.StreamReader sr = new StreamReader("in.txt");
-            //AudioSource.AudioSource audio = new AudioSource.AudioSource();
-            string qwe = sr.ReadLine();
-            textBox1.Text = UCSpeechTranslator.YandexWrapper.YandexWrapper.GetAudioText(qwe);
-            int n = 0;
-            n++;
+            var Audio = new AudioSource.AudioSource();
+            textBox1.Text = UCSpeechTranslator.YandexWrapper.YandexWrapper.GetAudioText(Audio);
+        }
+
+        private void bOpenFile_Click(object sender, EventArgs e)
+        {
+            label1.Text = "Путь:";
+            openFileDialog1.InitialDirectory = "c:\\";
+            openFileDialog1.Filter = "mp3 files (*.mp3)|*.mp3|wav files (*.wav)|*.wav|All files (*.*)|*.*";
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                var sw = new System.IO.StreamWriter("adress.txt");
+                sw.WriteLine(openFileDialog1.FileName);
+                sw.Close();
+            }
+            label1.Text += openFileDialog1.FileName;
         }
     }
 }

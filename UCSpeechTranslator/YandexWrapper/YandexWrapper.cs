@@ -12,9 +12,13 @@ namespace UCSpeechTranslator.YandexWrapper
     public class YandexWrapper
     {
         public static string AudioText;
-        public static string PostMethod(byte[] bytes)
+        public static string PostMethod(AudioSource.AudioSource obj)
         {
-            string postUrl = "https://asr.yandex.net/asr_xml?" + Guid.NewGuid() + "&" + "key=f040e6ac-3218-410c-af54-8a495f31ce79&" + "topic=queries";
+            obj.SetAudioAdress(obj);
+            obj.SetAPIKey(obj);
+            obj.SetTopic(obj);
+            obj.SetBinarySource(obj);
+            string postUrl = "https://asr.yandex.net/asr_xml?" + Guid.NewGuid() + "&key=" + obj.APIKey + "&" + "topic=" + obj.Topic;
             //"uuid=2606A62EE2C5F840849C7F360FE3E67B&"
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(postUrl);
             request.Method = "POST";
@@ -22,10 +26,10 @@ namespace UCSpeechTranslator.YandexWrapper
             request.SendChunked = true;
             request.UserAgent = "Oleg"; 
             request.ContentType = "audio/x-mpeg-3";
-            request.ContentLength = bytes.Length;
+            request.ContentLength = obj.BinarySource.Length;
             using (var newStream = request.GetRequestStream())
             {
-                newStream.Write(bytes, 0, bytes.Length);
+                newStream.Write(obj.BinarySource, 0, obj.BinarySource.Length);
             }
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
             string responseToString = "";
@@ -40,13 +44,10 @@ namespace UCSpeechTranslator.YandexWrapper
             responseToString = responseToString.Substring(0, index2);
             return responseToString;
         }
-        public static string GetAudioText(string Audio)
+        public static string GetAudioText(AudioSource.AudioSource Audio)
         {
-            //Audio = new AudioSource.AudioSource();
-            //Audio.GetBinaryAudio(Audio.AudioAdress, Audio.BinaryFileName);
-            var sr = new StreamReader(Audio);
-            byte[] bytes1 = Encoding.ASCII.GetBytes(sr.ReadToEnd());
-            AudioText=PostMethod(bytes1);
+            Audio = new AudioSource.AudioSource();
+            AudioText = PostMethod(Audio);
             return AudioText;
         }
 

@@ -30,9 +30,9 @@
         {
             this.bOpenFile = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.userControl11 = new UCSpeechTranslator.UserControl1();
             this.bOpenFile1 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.userControl11 = new UCSpeechTranslator.UserControl1();
             this.SuspendLayout();
             // 
             // bOpenFile
@@ -45,13 +45,6 @@
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // userControl11
-            // 
-            this.userControl11.Location = new System.Drawing.Point(12, 48);
-            this.userControl11.Name = "userControl11";
-            this.userControl11.Size = new System.Drawing.Size(442, 104);
-            this.userControl11.TabIndex = 0;
             // 
             // bOpenFile1
             // 
@@ -73,9 +66,16 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // userControl11
+            // 
+            this.userControl11.Location = new System.Drawing.Point(12, 48);
+            this.userControl11.Name = "userControl11";
+            this.userControl11.Size = new System.Drawing.Size(471, 104);
+            this.userControl11.TabIndex = 0;
+            // 
             // MainForm
             // 
-            this.ClientSize = new System.Drawing.Size(498, 157);
+            this.ClientSize = new System.Drawing.Size(497, 157);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.bOpenFile1);
             this.Controls.Add(this.userControl11);
