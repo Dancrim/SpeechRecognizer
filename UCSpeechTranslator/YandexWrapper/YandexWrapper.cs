@@ -15,6 +15,7 @@ namespace UCSpeechTranslator.YandexWrapper
         public static string AudioText;
         public static string PostMethod(AudioSource.AudioSource obj)
         {
+            obj = new AudioSource.AudioSource();
             string uuid = Guid.NewGuid().ToString().Replace("-", "");
             string postUrl = "https://asr.yandex.net/asr_xml?uuid=" + uuid + "&key=" + obj.APIKey + "&" + "topic=" + obj.Topic;
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(postUrl);
@@ -50,12 +51,6 @@ namespace UCSpeechTranslator.YandexWrapper
             XmlNode elem = doc.DocumentElement.FirstChild;
             responseToString = elem.InnerText;
             return responseToString;
-        }
-        public static string GetAudioText(AudioSource.AudioSource Audio)
-        {
-            Audio = new AudioSource.AudioSource();
-            AudioText = PostMethod(Audio);
-            return AudioText;
         }
     }
 }

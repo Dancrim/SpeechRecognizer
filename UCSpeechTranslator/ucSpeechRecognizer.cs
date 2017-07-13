@@ -43,7 +43,7 @@ namespace UCSpeechTranslator
         {
             var Audio = new AudioSource.AudioSource();
             textBox1.Text = "Please wait...";
-            textBox1.Text = UCSpeechTranslator.YandexWrapper.YandexWrapper.GetAudioText(Audio);
+            textBox1.Text = UCSpeechTranslator.YandexWrapper.YandexWrapper.PostMethod(Audio);
         }
     }
 }
