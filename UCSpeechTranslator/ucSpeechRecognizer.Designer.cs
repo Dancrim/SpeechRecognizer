@@ -25,7 +25,7 @@
         private void InitializeComponent() {
             this.Recognize = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.OutputText = new System.Windows.Forms.TextBox();
             this.PlayButton = new System.Windows.Forms.Button();
             this.StopButton = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
@@ -50,14 +50,14 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Путь: ";
             // 
-            // textBox1
+            // OutputText
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(3, 27);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(559, 200);
-            this.textBox1.TabIndex = 2;
+            this.OutputText.Enabled = false;
+            this.OutputText.Location = new System.Drawing.Point(3, 27);
+            this.OutputText.Multiline = true;
+            this.OutputText.Name = "OutputText";
+            this.OutputText.Size = new System.Drawing.Size(559, 200);
+            this.OutputText.TabIndex = 2;
             // 
             // PlayButton
             // 
@@ -85,7 +85,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.StopButton);
             this.Controls.Add(this.PlayButton);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.OutputText);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Recognize);
             this.Name = "UCSpeechRecognizer";
@@ -99,7 +99,7 @@
 
         private System.Windows.Forms.Button Recognize;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox OutputText;
         private System.Windows.Forms.Button PlayButton;
         private System.Windows.Forms.Button StopButton;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;

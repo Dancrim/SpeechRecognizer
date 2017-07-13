@@ -42,8 +42,8 @@ namespace UCSpeechTranslator
         private void Recognize_Click(object sender, EventArgs e)
         {
             var Audio = new AudioSource.AudioSource();
-            textBox1.Text = "Please wait...";
-            textBox1.Text = UCSpeechTranslator.YandexWrapper.YandexWrapper.PostMethod(Audio);
+            OutputText.Text = "Please wait...";
+            OutputText.Text = UCSpeechTranslator.YandexWrapper.YandexWrapper.PostMethod(Audio);
         }
     }
 }
